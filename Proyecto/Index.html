@@ -1,42 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Panadería Las Violetas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Constructora El Milenio</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 
-  <!-- Font Awesome para íconos (incluye ícono de WhatsApp) -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-KY4sI4i6kzQ0m6aUPH0vjMdex+U6tv4B+JzYlMCPH53tJekMZK5T7ZoqKqQ4p6jh3ZzzcW2bGqkaJZOKdxKeWw=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
   />
+
   <style>
-    /* Botón flotante de WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fa;
+      color: #2c3e50;
     }
 
-    .whatsapp-float:hover {
-      background-color: #1ebd5a;
+    header {
+      background-color: #34495e;
+      padding: 20px 0 30px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      color: #ecf0f1;
+      margin-bottom: 5px;
+      font-size: 2.5em;
+    }
+
+    header h2 {
+      color: #bdc3c7;
+      margin-top: 0;
+      font-size: 1.2em;
+      font-weight: normal;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2980b9;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    h2 {
+      color: #2980b9;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #34495e;
+      margin-bottom: 30px;
     }
 
     .index {
@@ -51,41 +95,76 @@
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ecf0f1;
+      color: #2c3e50;
+      font-size: 0.9em;
+      margin-top: 40px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      line-height: 60px;
+      box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+      z-index: 100;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #1ebc59;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Encabezado y navegación -->
   <header>
+    <h1>Constructora El Milenio</h1>
+    <h2>Construimos sueños, edificamos futuro</h2>
     <nav>
       <a href="index.html">Inicio</a>
-      <a href="Productos.html">Productos</a>
+      <a href="Proyectos.html">Proyectos</a>
       <a href="Quiénes somos.html">Quiénes Somos</a>
       <a href="Misión.html">Misión</a>
       <a href="Visión.html">Visión</a>
       <a href="Contactanos.html">Contáctanos</a>
       <a href="Formulario.html">Formulario</a>
     </nav>
-  </header> 
+  </header>
 
-  <!-- Contenido principal -->
-  <h1>Panadería Las Violetas</h1>
-  <h2>Te ofrecemos lo mejor</h2>
-  <p>
-    En nuestra panadería encuentras la mejor calidad de pan, pasteles y mucho más para que disfrutes momentos especiales con tu familia.
-  </p>
+  <main>
+    <h2>Bienvenidos a Constructora El Milenio</h2>
+    <p>
+      Somos una empresa comprometida con la excelencia en el desarrollo de proyectos de construcción en la región oriental de Guatemala. 
+      Nuestro enfoque está en crear espacios funcionales, modernos y sostenibles que respondan a las necesidades de nuestros clientes.
+    </p>
 
-  <div class="index">
-    <img src="Imagenes/violetas.jpg" alt="Violetas">
-  </div>
+    <div class="index">
+      <img src="imagenes/logo.jpg" alt="Constructora El Milenio">
+    </div>
+  </main>
 
-  <!-- Botón flotante de WhatsApp -->
+  <footer>
+    &copy; 2025 Constructora El Milenio. Todos los derechos reservados.
+  </footer>
+
   <a
-    href="https://wa.me/50279648600?text=Hola%2C%20me%20gustaría%20saber%20más%20sobre%20sus%20productos"
+    href="https://wa.me/50279648600?text=Hola%2C%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios%20de%20construcción"
     class="whatsapp-float"
     target="_blank"
-    aria-label="Chatea por WhatsApp">
+    aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
