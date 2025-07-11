@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carrito - Constructora el Milenio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navegación -->
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="Productos.html">Productos</a>
+      <a href="Quiénes somos.html">Quiénes Somos</a>
+      <a href="Misión.html">Misión</a>
+      <a href="Visión.html">Visión</a>
+      <a href="Proyectos.html">Proyectos</a>
+      <a href="Formulario.html">Formulario</a>
+      <a href="Carrito.html">Carrito de compras</a>
+    </nav>
+  </header>
+
+  <!-- Título principal -->
+  <h1>Carrito de Compras</h1>
+
+  <!-- Productos -->
+  <div class="contenedor-productos">
+    <div class="producto">
+      <h3>Tubo de acero</h3>
+      <p>Q300.00</p>
+      <!-- Ejemplo de botón actualizado -->
+      <button class="btn" onclick="agregarAlCarrito('Tubo de acero', 300.00)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Pala Truper</h3>
+      <p>Q150.00</p>
+      <!-- Ejemplo de botón actualizado -->
+      <button class="btn" onclick="agregarAlCarrito('Pala Truper', 150.00)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Martillo Truper</h3>
+      <p>Q200.00</p>
+      <!-- Ejemplo de botón actualizado -->
+      <button class="btn" onclick="agregarAlCarrito('Martillo Truper', 200.00)">Agregar</button>
+    </div>
+
+    <div class="producto">
+      <h3>Bolsa de cemento</h3>
+      <p>Q55.00</p>
+      <!-- Ejemplo de botón actualizado -->
+      <button class="btn" onclick="agregarAlCarrito('Bolsa de cemento', 55.00)">Agregar</button>
+    </div>
+  </div>
+
+  <!-- Carrito -->
+  <div class="carrito">
+    <h2>Resumen del Carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <p>Total: Q<span id="total">0.00</span></p>
+    <button onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
+  </div>
+
+  <footer>
+    &copy; 2025 Constructora el Milenio. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    const carrito = [];
+
+    function agregarAlCarrito(nombre, precio) {
+      carrito.push({ nombre, precio });
+      mostrarCarrito();
+    }
+
+    function mostrarCarrito() {
+      const lista = document.getElementById("lista-carrito");
+      lista.innerHTML = "";
+      let total = 0;
+      carrito.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nombre} - Q${item.precio.toFixed(2)}`;
+        lista.appendChild(li);
+        total += item.precio;
+      });
+      document.getElementById("total").textContent = total.toFixed(2);
+    }
+
+    function enviarPedido() {
+      if (carrito.length === 0) {
+        alert("El carrito está vacío.");
+        return;
+      }
+
+      let mensaje = "Hola, quiero hacer un pedido:\n";
+      carrito.forEach(item => {
+        mensaje += `- ${item.nombre}: Q${item.precio.toFixed(2)}\n`;
+      });
+
+      let total = carrito.reduce((sum, item) => sum + item.precio, 0);
+      mensaje += `Total: Q${total.toFixed(2)}`;
+
+      const numero = "50279648600";
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+
+</body>
+</html>
