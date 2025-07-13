@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiénes Somos - Constructora El Milenio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Constructora El Milenio</h1>
+      </div>
+      
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="Productos.html">Productos</a></li>
+          <li><a href="Quiénes somos.html">Quiénes Somos</a></li>
+          <li><a href="Misión.html">Misión</a></li>
+          <li><a href="Visión.html">Visión</a></li>
+          <li><a href="Proyectos.html">Proyectos</a></li>
+          <li><a href="Formulario.html">Formulario</a></li>
+          <li><a href="Carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="about-section">
+      <div class="about-text">
+        <h2>¿Quiénes Somos?</h2>
+        <p>
+          En <strong>Constructora El Milenio</strong>, nos dedicamos a transformar ideas en obras sólidas y funcionales que mejoran la calidad de vida de nuestros clientes. Con sede en Chiquimula, somos una empresa comprometida con el desarrollo urbano y rural de la región oriental de Guatemala.
+        </p>
+        <p>
+          Nos enfocamos en brindar servicios de construcción accesibles, de alta calidad y con un diseño estético cuidado. Trabajamos con responsabilidad, transparencia y un fuerte compromiso social, para que cada familia o empresa pueda hacer realidad su proyecto, sin importar su presupuesto.
+        </p>
+      </div>
+      <div class="about-img">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXQXEFGilxgIR2rAG7uaBl5sRjbWLNk2NCzw&s" alt="Construcción en proceso">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="copyright">
+      &copy; 2025 Constructora El Milenio. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <script>
+    // Funcionalidad del menú móvil
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      
+      menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        
+        // Cambiar ícono
+        const icon = menuToggle.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+      
+      // Cerrar menú al hacer clic en un enlace (solo en móviles)
+      if (window.innerWidth <= 768) {
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+          });
+        });
+      }
+    });
+  </script>
+  <!-- Agregar Font Awesome si no existe -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yFk4TDdVNEcA+u8G99YzN4Ds1QjD3g5nN4h4sk5ZhRPNnJgRfFeqjvLt1QGH6LR4NqCbb69d1NBBZ5gRmQ9lXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/50279648600?text=Hola%2C%20me%20gustaría%20recibir%20más%20información%20sobre%20sus%20productos" 
+   class="whatsapp-float" target="_blank" aria-label="Chatea por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+</body>
+</html>
