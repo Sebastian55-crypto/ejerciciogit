@@ -10,19 +10,26 @@
 
 <body>
   <header>
-    <h1>Constructora El Milenio</h1>
-    <h2>Construimos sueños, edificamos futuro</h2>
+  <div class="header-content">
+    <div class="header-title">
+      <h1>Constructora El Milenio</h1>
+      <p>Innovación y calidad en cada proyecto</p>
+      <button class="menu-toggle">☰</button>
+    </div>
     <nav>
-      <a href="index.html">Inicio</a>
-      <a href="Productos.html">Productos</a>
-      <a href="Quiénes somos.html">Quiénes Somos</a>
-      <a href="Misión.html">Misión</a>
-      <a href="Visión.html">Visión</a>
-      <a href="Proyectos.html">Proyectos</a>
-      <a href="Formulario.html">Formulario</a>
-      <a href="Carrito.html">Carrito de compras</a>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Productos.html">Productos</a></li>
+        <li><a href="Quiénes somos.html">Quiénes Somos</a></li>
+        <li><a href="Misión.html">Misión</a></li>
+        <li><a href="Visión.html">Visión</a></li>
+        <li><a href="Proyectos.html">Proyectos</a></li>
+        <li><a href="Formulario.html">Formulario</a></li>
+        <li><a href="Carrito.html">Carrito de compras</a></li>
+      </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
   <main>
     <h2>Bienvenidos a Constructora El Milenio</h2>
@@ -49,4 +56,21 @@
   </a>
 
 </body>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+
+  menuToggle.addEventListener('click', function() {
+    nav.classList.toggle('active');
+  });
+
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+    });
+  });
+});
+</script>
+
 </html>
