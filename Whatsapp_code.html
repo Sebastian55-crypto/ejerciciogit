@@ -27,12 +27,53 @@
     <!-- Enlace a Font Awesome para el ícono (opcional) -->
     <link rel="stylesheet" href="file:///C:/Users/Samy/Downloads/Proyecto%20Final%20Tics/index.html">
 </head>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+  
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', function() {
+      nav.classList.toggle('active');
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active');
+      });
+    });
+    
+    // Ocultar header al hacer scroll hacia abajo
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector('header');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > lastScrollY) {
+        // Scroll hacia abajo
+        header.classList.add('hide');
+      } else {
+        // Scroll hacia arriba
+        header.classList.remove('hide');
+      }
+      
+      // Si está en la parte superior, mostrar siempre
+      if (window.scrollY < 50) {
+        header.classList.remove('hide');
+      }
+      
+      lastScrollY = window.scrollY;
+    });
+  }
+});
+</script>
 <body>
 
     <!-- Contenido de tu página -->
 
     <!-- Botón flotante de WhatsApp -->
-    <a href="https://api.whatsapp.com/send/?phone=50661316743" 
+    <a href="https://api.whatsapp.com/send/?phone=56231767" 
        class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>

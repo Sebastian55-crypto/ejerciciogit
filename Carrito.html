@@ -7,74 +7,109 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Navegación -->
   <header>
-  <div class="header-content">
-    <div class="header-title">
-      <h1>Constructora El Milenio</h1>
-      <p>Innovación y calidad en cada proyecto</p>
-      <button class="menu-toggle">☰</button>
+    <div class="header-container">
+      <div class="logo">
+        <h1>Constructora El Milenio</h1>
+      </div>
+      
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="Productos.html">Productos</a></li>
+          <li><a href="Quiénes somos.html">Quiénes Somos</a></li>
+          <li><a href="Misión.html">Misión</a></li>
+          <li><a href="Visión.html">Visión</a></li>
+          <li><a href="Proyectos.html">Proyectos</a></li>
+          <li><a href="Formulario.html">Formulario</a></li>
+          <li><a href="Carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="Productos.html">Productos</a></li>
-        <li><a href="Quiénes somos.html">Quiénes Somos</a></li>
-        <li><a href="Misión.html">Misión</a></li>
-        <li><a href="Visión.html">Visión</a></li>
-        <li><a href="Proyectos.html">Proyectos</a></li>
-        <li><a href="Formulario.html">Formulario</a></li>
-        <li><a href="Carrito.html">Carrito de compras</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
-  <!-- Título principal -->
-  <h1>Carrito de Compras</h1>
+  <main class="container">
+    <h1>Carrito de Compras</h1>
 
-  <!-- Productos -->
-  <div class="contenedor-productos">
-    <div class="producto">
-      <h3>Tubo de acero</h3>
-      <p>Q300.00</p>
-      <!-- Ejemplo de botón actualizado -->
-      <button class="btn" onclick="agregarAlCarrito('Tubo de acero', 300.00)">Agregar</button>
+    <div class="contenedor-productos">
+      <div class="carrito-producto">
+        <h3>Tubo de acero</h3>
+        <p>Q300.00</p>
+        <button class="btn" onclick="agregarAlCarrito('Tubo de acero', 300.00)">Agregar</button>
+      </div>
+
+      <div class="carrito-producto">
+        <h3>Pala Truper</h3>
+        <p>Q150.00</p>
+        <button class="btn" onclick="agregarAlCarrito('Pala Truper', 150.00)">Agregar</button>
+      </div>
+
+      <div class="carrito-producto">
+        <h3>Martillo Truper</h3>
+        <p>Q200.00</p>
+        <button class="btn" onclick="agregarAlCarrito('Martillo Truper', 200.00)">Agregar</button>
+      </div>
+
+      <div class="carrito-producto">
+        <h3>Bolsa de cemento</h3>
+        <p>Q55.00</p>
+        <button class="btn" onclick="agregarAlCarrito('Bolsa de cemento', 55.00)">Agregar</button>
+      </div>
+
+      <div class="carrito-producto">
+        <h3>Vigas de acero</h3>
+        <p>Q1500.00</p>
+        <button class="btn" onclick="agregarAlCarrito('Vigas de acero', 1500.00)">Agregar</button>
+      </div>
+
+      <div class="carrito-producto">
+        <h3>Tubos de acero</h3>
+        <p>Q1000.00</p>
+        <button class="btn" onclick="agregarAlCarrito('Tubos de acero', 1000.00)">Agregar</button>
+      </div>
+
+      <div class="carrito-producto">
+        <h3>Taladro Truper</h3>
+        <p>Q500.00</p>
+        <button class="btn" onclick="agregarAlCarrito('Taladro Truper', 500.00)">Agregar</button>
+      </div>
+
+      <div class="carrito-producto">
+        <h3>Grúa</h3>
+        <p>Q1,000,000.00</p>
+        <button class="btn" onclick="agregarAlCarrito('Grúa', 1000000.00)">Agregar</button>
+      </div>
+
+      <div class="carrito-producto">
+        <h3>Mezcladroa RUBI</h3>
+        <p>Q1000.00</p>
+        <button class="btn" onclick="agregarAlCarrito('Mezcladora RUBI', 1000.00)">Agregar</button>
+      </div>
+
+      <div class="carrito-producto">
+        <h3>Grava/tonelada</h3>
+        <p>Q1500.00</p>
+        <button class="btn" onclick="agregarAlCarrito('Grava/tonelada', 1500.00)">Agregar</button>
+      </div>
+      
     </div>
 
-    <div class="producto">
-      <h3>Pala Truper</h3>
-      <p>Q150.00</p>
-      <!-- Ejemplo de botón actualizado -->
-      <button class="btn" onclick="agregarAlCarrito('Pala Truper', 150.00)">Agregar</button>
+    <div class="carrito">
+      <h2>Resumen del Carrito</h2>
+      <ul id="lista-carrito"></ul>
+      <p class="carrito-total">Total: Q<span id="total">0.00</span></p>
+      <button class="btn btn-block" onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
     </div>
-
-    <div class="producto">
-      <h3>Martillo Truper</h3>
-      <p>Q200.00</p>
-      <!-- Ejemplo de botón actualizado -->
-      <button class="btn" onclick="agregarAlCarrito('Martillo Truper', 200.00)">Agregar</button>
-    </div>
-
-    <div class="producto">
-      <h3>Bolsa de cemento</h3>
-      <p>Q55.00</p>
-      <!-- Ejemplo de botón actualizado -->
-      <button class="btn" onclick="agregarAlCarrito('Bolsa de cemento', 55.00)">Agregar</button>
-    </div>
-  </div>
-
-  <!-- Carrito -->
-  <div class="carrito">
-    <h2>Resumen del Carrito</h2>
-    <ul id="lista-carrito"></ul>
-    <p>Total: Q<span id="total">0.00</span></p>
-    <button onclick="enviarPedido()">Enviar pedido por WhatsApp</button>
-  </div>
+  </main>
 
   <footer>
-    &copy; 2025 Constructora el Milenio. Todos los derechos reservados.
+    <div class="copyright">
+      &copy; 2025 Constructora el Milenio. Todos los derechos reservados.
+    </div>
   </footer>
 
   <script>
@@ -112,11 +147,42 @@
       let total = carrito.reduce((sum, item) => sum + item.precio, 0);
       mensaje += `Total: Q${total.toFixed(2)}`;
 
-      const numero = "50279648600";
+      const numero = "56231767";
       const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
       window.open(url, "_blank");
     }
-  </script>
 
+    // Funcionalidad del menú móvil
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      
+      menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        
+        // Cambiar ícono
+        const icon = menuToggle.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+      
+      // Cerrar menú al hacer clic en un enlace (solo en móviles)
+      if (window.innerWidth <= 768) {
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>
